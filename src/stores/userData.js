@@ -17,6 +17,7 @@ export const useUserStore = defineStore('user', {
         this.userData = { email: user.email, uid: user.uid }
       } catch (error) {
         console.log(error);
+        alert('usuario o contraseña incorrecto');
       } finally {
         this.loading = false;
       }

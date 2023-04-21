@@ -8,9 +8,9 @@
                 <div class="register__input-group">
                     <input class="register__input" type="email" placeholder="Correo" v-model.trim="email"
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-                    <input class="register__input" type="password" placeholder="Contraseña" v-model.trim="password"
-                        required>
-                    <input class="register__input" type="password" placeholder="Confirmar contraseña"
+                    <input class="register__input" type="password" placeholder="Contraseña" minlength="8"
+                        v-model.trim="password" required>
+                    <input class="register__input" type="password" placeholder="Confirmar contraseña" minlength="8"
                         v-model.trim="password_confirm" required>
                     <!--pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" con este patrón se valida el formato de contraseña-->
                 </div>
