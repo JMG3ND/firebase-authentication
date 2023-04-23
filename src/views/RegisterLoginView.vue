@@ -10,11 +10,13 @@
             <button @click="activation" class="content__button">
                 {{ buttonText }}
             </button>
+            <RouterLink to="/" class="content__button">Regresar</RouterLink>
         </div>
     </div>
 </template>
 
 <script setup>
+import { RouterLink } from 'vue-router';
 import { ref, computed } from 'vue';
 import LoginComp from '../components/LoginComp.vue';
 import RegisterComp from '../components/RegisterComp.vue';
@@ -65,6 +67,8 @@ const buttonText = computed(() => active.value ? 'Iniciar Sesión' : 'Registrars
             transform: translateX(100%);
 
             display: flex;
+            flex-direction: column;
+            gap: 1rem;
             align-items: center;
             justify-content: center;
 
@@ -75,6 +79,7 @@ const buttonText = computed(() => active.value ? 'Iniciar Sesión' : 'Registrars
         }
 
         &__button {
+            text-decoration: none;
             cursor: pointer;
             padding: 0.5rem 1rem;
             border-radius: 5px;
@@ -118,10 +123,15 @@ const buttonText = computed(() => active.value ? 'Iniciar Sesión' : 'Registrars
         }
 
         &__panel-button {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         &__button {
+            text-decoration: none;
             cursor: pointer;
             padding: 0.5rem 1rem;
             border-radius: 5px;
