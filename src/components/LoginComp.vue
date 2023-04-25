@@ -18,6 +18,9 @@
                     <button class="login__button" type="submit">Iniciar Sesión</button>
                 </div>
             </form>
+            <footer>
+                <button class="register__button" @click="redirect">Iniciar sesión con Google</button>
+            </footer>
         </article>
     </div>
     <div v-else>
@@ -37,6 +40,11 @@ const email = ref('');
 const password = ref('');
 const remember = ref(false);
 
+
+const redirect = () => {
+    userData.signInWithRedirectmet();
+    router.push('/');
+}
 const iniciarSesion = async () => {
     if (email.value != '') {
         await userData.singInUser(email.value, password.value);
