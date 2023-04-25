@@ -33,5 +33,10 @@ const user = useUserStore();
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+
+    h1 {
+        text-align: center;
+    }
 }
 </style>
